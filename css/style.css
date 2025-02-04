@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.container h1 {
+    margin-bottom: 20px;
+}
+
+.container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 5px;
+    color: #282c34;
+    transition: background-color 0.3s;
+}
+
+.container button:hover {
+    background-color: #21a1f1;
+}
+
+.flower {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    animation: rotate 10s linear infinite;
+}
+
+.flower .petal {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    border-radius: 50px;
+    transform-origin: 50% 100%;
+}
+
+.flower .petal:nth-child(1) {
+    background-color: #FF5733;
+    transform: rotate(0deg) translateY(-30px);
+}
+
+.flower .petal:nth-child(2) {
+    background-color: #FF33A1;
+    transform: rotate(90deg) translateY(-30px);
+}
+
+.flower .petal:nth-child(3) {
+    background-color: #33FF57;
+    transform: rotate(180deg) translateY(-30px);
+}
+
+.flower .petal:nth-child(4) {
+    background-color: #3357FF;
+    transform: rotate(270deg) translateY(-30px);
+}
+
+.flower .center {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #FFC300;
+    border-radius: 50%;
+    top: 35px;
+    left: 35px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
