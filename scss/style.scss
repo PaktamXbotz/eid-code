@@ -1,0 +1,93 @@
+$background-color: #282c34;
+$flower-center-color: #FFC300;
+$petal-colors: (
+    #FF5733,
+    #FF33A1,
+    #33FF57,
+    #3357FF
+);
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: $background-color;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+
+    .container {
+        text-align: center;
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #61dafb;
+            border: none;
+            border-radius: 5px;
+            color: $background-color;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #21a1f1;
+            }
+        }
+    }
+}
+
+.flower {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    animation: rotate 10s linear infinite;
+
+    .petal {
+        position: absolute;
+        width: 50px;
+        height: 20px;
+        border-radius: 50px;
+        transform-origin: 50% 100%;
+
+        &:nth-child(1) {
+            background-color: nth($petal-colors, 1);
+            transform: rotate(0deg) translateY(-30px);
+        }
+
+        &:nth-child(2) {
+            background-color: nth($petal-colors, 2);
+            transform: rotate(90deg) translateY(-30px);
+        }
+
+        &:nth-child(3) {
+            background-color: nth($petal-colors, 3);
+            transform: rotate(180deg) translateY(-30px);
+        }
+
+        &:nth-child(4) {
+            background-color: nth($petal-colors, 4);
+            transform: rotate(270deg) translateY(-30px);
+        }
+    }
+
+    .center {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: $flower-center-color;
+        border-radius: 50%;
+        top: 35px;
+        left: 35px;
+    }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
