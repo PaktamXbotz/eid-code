@@ -1,0 +1,31 @@
+// Variables
+$background-color: #f4f4f4;
+$canvas-background: #e0f7fa;
+$leaf-color: #32CD32;
+$stem-color: #228B22;
+$petal-color: #FF69B4;
+$border-radius: 10px;
+$shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+// Styles
+body {
+    font-family: Arial, sans-serif;
+    background-color: $background-color;
+    margin: 0;
+    padding: 20px;
+
+    .container {
+        text-align: center;
+
+        h1 {
+            color: $stem-color;
+        }
+    }
+}
+
+canvas {
+    border: 1px solid #ccc;
+    background-color: $canvas-background;
+    border-radius: $border-radius;
+    box-shadow: $shadow;
+}
