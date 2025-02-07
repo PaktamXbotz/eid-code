@@ -1,18 +1,4 @@
-function drawTulip(ctx, x, y) {
-    // Draw the petals
-    ctx.fillStyle = '#FF69B4'; // Pink color for petals
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.bezierCurveTo(x - 20, y - 30, x - 20, y + 30, x, y);
-    ctx.bezierCurveTo(x + 20, y + 30, x + 20, y - 30, x, y);
-    ctx.closePath();
-    ctx.fill();
-
-    // Draw the stem
-    ctx.fillStyle = '#228B22'; // Green color for stem
-    ctx.fillRect(x - 5, y, 10, 100);
-
-    // Draw the leaves
+function drawLeaf(ctx, x, y) {
     ctx.fillStyle = '#32CD32'; // Light green color for leaves
     ctx.beginPath();
     ctx.moveTo(x - 30, y + 50);
@@ -27,11 +13,40 @@ function drawTulip(ctx, x, y) {
     ctx.fill();
 }
 
-const canvas = document.getElementById('tulipCanvas');
-const ctx = canvas.getContext('2d');
+function drawStem(ctx, x, y) {
+    ctx.fillStyle = '#228B22'; // Green color for stem
+    ctx.fillRect(x - 5, y, 10, 100);
+}
 
-// Function to draw multiple tulips with a delay
-async function drawTulipsWithDelay() {
+function drawTulip(ctx, x, y) {
+    // Draw the petals
+    ctx.fillStyle = '#FF69B4'; // Pink color for petals
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.bezierCurveTo(x - 20, y - 30, x - 20, y + 30, x, y);
+    ctx.bezierCurveTo(x + 20, y + 30, x + 20, y - 30, x, y);
+    ctx.closePath();
+    ctx.fill();
+}
+
+async function drawTulipWithDelay(ctx, x, y) {
+    // Draw leaves first
+    drawLeaf(ctx, x, y);
+    await new Promise(resolve => setTimeout(resolve, 500)); // Delay of 0.5 seconds
+
+    // Draw stem next
+    drawStem(ctx, x, y);
+    await new Promise(resolve => setTimeout(resolve, 500)); // Delay of 0.5 seconds
+
+    // Draw petals last
+    drawTulip(ctx, x, y);
+    await new Promise(resolve => setTimeout(resolve, 500)); // Delay of 0.5 seconds
+}
+
+async function drawTulips() {
+    const canvas = document.getElementById('tulipCanvas');
+    const ctx = canvas.getContext('2d');
+
     const tulips = [
         { x: 200, y: 150 },
         { x: 100, y: 200 },
@@ -39,10 +54,9 @@ async function drawTulipsWithDelay() {
     ];
 
     for (const tulip of tulips) {
-        drawTulip(ctx, tulip.x, tulip.y);
-        await new Promise(resolve => setTimeout(resolve, 1000)); // Delay of 1 second
+        await drawTulipWithDelay(ctx, tulip.x, tulip.y);
     }
 }
 
 // Start drawing tulips
-drawTulipsWithDelay();
+drawTulips();
