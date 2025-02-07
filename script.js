@@ -30,7 +30,19 @@ function drawTulip(ctx, x, y) {
 const canvas = document.getElementById('tulipCanvas');
 const ctx = canvas.getContext('2d');
 
-// Draw multiple tulips
-drawTulip(ctx, 200, 150);
-drawTulip(ctx, 100, 200);
-drawTulip(ctx, 300, 200);
+// Function to draw multiple tulips with a delay
+async function drawTulipsWithDelay() {
+    const tulips = [
+        { x: 200, y: 150 },
+        { x: 100, y: 200 },
+        { x: 300, y: 200 }
+    ];
+
+    for (const tulip of tulips) {
+        drawTulip(ctx, tulip.x, tulip.y);
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Delay of 1 second
+    }
+}
+
+// Start drawing tulips
+drawTulipsWithDelay();
