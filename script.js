@@ -23,8 +23,8 @@ function drawTulip(ctx, x, y) {
     ctx.fillStyle = '#FF69B4'; // Pink color for petals
     ctx.beginPath();
     ctx.moveTo(x, y);
-    ctx.bezierCurveTo(x - 20, y - 30, x - 20, y + 30, x, y);
-    ctx.bezierCurveTo(x + 20, y + 30, x + 20, y - 30, x, y);
+    ctx.bezierCurveTo(x - 30, y - 30, x - 20, y + 30, x, y);
+    ctx.bezierCurveTo(x + 20, y + 30, x + 30, y - 30, x, y);
     ctx.closePath();
     ctx.fill();
 }
