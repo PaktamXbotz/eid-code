@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tulip Flower Sketch</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
         <h1>Tulip Flower Sketch</h1>
-        <canvas id="tulipCanvas" width="400" height="400" aria-label="Canvas for drawing tulip flowers"></canvas>
-        <p>Watch the tulips bloom as they are sketched!</p>
+        <canvas id="tulipCanvas" width="400" height="400"></canvas>
     </div>
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
