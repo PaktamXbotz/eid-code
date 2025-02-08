@@ -1,19 +1,15 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
 }
-body .container {
-  text-align: center;
-}
-body .container h1 {
-  color: #228B22;
+
+.container {
+    text-align: center;
 }
 
 canvas {
-  border: 1px solid #ccc;
-  background-color: #e0f7fa;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    background-color: #e0f7fa;
 }
