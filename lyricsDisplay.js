@@ -71,7 +71,11 @@ const displayLyrics = () => {
     }
 };
 
-// Start displaying lyrics when the audio plays
+document.getElementById('playButton').addEventListener('click', () => {
+    audio.play(); // Play music when play button is clicked
+    displayLyrics(); // Start displaying lyrics
+});
+
 audio.addEventListener('play', () => {
     currentIndex = 0; // Reset index when audio plays
     displayLyrics(); // Start displaying lyrics
