@@ -1,15 +1,23 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
+    background-color: #f0f0f0; /* Light background for simplicity */
+    color: #333; /* Default text color */
+    font-family: Arial, sans-serif; /* Simple font */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Add some padding */
 }
 
 .container {
-    text-align: center;
+    max-width: 600px; /* Limit the width of the container */
+    margin: auto; /* Center the container */
+    text-align: center; /* Center text */
 }
 
-canvas {
-    border: 1px solid #ccc;
-    background-color: #e0f7fa;
+.lyrics {
+    background-color: #fff; /* White background for lyrics */
+    border: 1px solid #ccc; /* Light gray border */
+    padding: 10px; /* Add padding */
+    height: 300px; /* Fixed height for lyrics */
+    overflow-y: auto; /* Scroll if content overflows */
+    white-space: pre-wrap; /* Preserve whitespace for typing effect */
+    margin-top: 20px; /* Space above lyrics */
 }
