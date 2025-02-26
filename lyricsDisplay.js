@@ -48,13 +48,18 @@ const audio = document.getElementById('audio');
 let currentIndex = 0; // Track the current index of the lyrics
 
 const typeWriter = (text, i, callback) => {
-    if (i < text.length) {
-        lyricsContainer.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(() => typeWriter(text, i, callback), 100); // Slow down typing speed
-    } else {
-        callback();
-    }
+    lyricsContainer.innerHTML = ""; // Clear previous text
+    const typingSpeed = 100; // Adjust typing speed here
+    const displayNextChar = () => {
+        if (i < text.length) {
+            lyricsContainer.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(displayNextChar, typingSpeed); // Slow down typing speed
+        } else {
+            callback();
+        }
+    };
+    displayNextChar(); // Start displaying characters
 };
 
 const displayLyrics = () => {
@@ -72,7 +77,9 @@ const displayLyrics = () => {
 };
 
 document.getElementById('playButton').addEventListener('click', () => {
-    audio.play(); // Play music when play button is clicked
+    audio.play().catch(error => {
+        console.error("Error playing audio:", error);
+    }); // Play music when play button is clicked
     displayLyrics(); // Start displaying lyrics
 });
 
