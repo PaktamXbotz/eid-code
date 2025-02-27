@@ -47,6 +47,7 @@ const lyricsContainer = document.getElementById('lyrics');
 const audio = document.getElementById('audio');
 let currentIndex = 0; // Track the current index of the lyrics
 
+// Function to type out text
 const typeWriter = (text, i, callback) => {
     lyricsContainer.innerHTML = ""; // Clear previous text
     const typingSpeed = 100; // Adjust typing speed here
@@ -62,21 +63,36 @@ const typeWriter = (text, i, callback) => {
     displayNextChar(); // Start displaying characters
 };
 
+// Function to display ASCII art
+const displayAsciiArt = () => {
+    const asciiArt = `
+        🎵  🎶
+       MUSIC ENDED
+        🎵  🎶
+    `;
+    typeWriter(asciiArt, 0, () => {
+        lyricsContainer.style.color = '#ffcc00'; // Change color for end message
+    });
+};
+
+// Function to display lyrics
 const displayLyrics = () => {
     if (currentIndex < lyrics.length) {
         const { time, text } = lyrics[currentIndex];
         if (audio.currentTime >= time - 0.5) {
             typeWriter(text + '\n\n', 0, () => { // Add typing effect for lyrics
-                lyricsContainer.scrollTop = lyricsContainer.scrollHeight; // Auto-scroll to the bottom
                 currentIndex++; // Move to the next lyric
-                setTimeout(displayLyrics, 500); // Delay before displaying the next lyric
+                setTimeout(displayLyrics, 1000); // Delay before displaying the next lyric
             });
         } else {
             requestAnimationFrame(displayLyrics); // Continue checking the time
         }
+    } else {
+        displayAsciiArt(); // Display ASCII art when lyrics are done
     }
 };
 
+// Play button functionality
 document.getElementById('playButton').addEventListener('click', () => {
     audio.play().catch(error => {
         console.error("Error playing audio:", error);
@@ -84,6 +100,30 @@ document.getElementById('playButton').addEventListener('click', () => {
     displayLyrics(); // Start displaying lyrics
 });
 
+// Pause button functionality
+document.getElementById('pauseButton').addEventListener('click', () => {
+    audio.pause(); // Pause the audio
+});
+
+// Reset button functionality
+document.getElementById('resetButton').addEventListener('click', () => {
+    audio.pause(); // Pause the audio
+    audio.currentTime = 0; // Reset audio to the beginning
+    currentIndex = 0; // Reset lyrics index
+    lyricsContainer.innerHTML = "Welcome to the Lyrics Display! Click play to start the music."; // Reset display
+});
+
+// Start the terminal simulation when the page loads
+window.onload = () => {
+    if (lyricsContainer && audio) {
+        lyricsContainer.innerHTML = 'nijxm@aloneHost<br>$ Play music';
+        simulateTerminalInput(); // Start displaying lyrics immediately
+    } else {
+        console.error('Lyrics container or audio element not found on page load.');
+    }
+};
+
+// Audio event listeners
 audio.addEventListener('play', () => {
     currentIndex = 0; // Reset index when audio plays
     displayLyrics(); // Start displaying lyrics
