@@ -39,6 +39,9 @@ body {
   position: absolute;
   transform: translate(-50%, -50%);
   white-space: nowrap;
+  
+  /* Adding rotation for circle_word to rotate opposite to the orbit */
+  animation: rotateText 10s infinite linear;
 }
 
 @keyframes orbit {
@@ -47,5 +50,14 @@ body {
   }
   to {
     transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
+
+@keyframes rotateText {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
