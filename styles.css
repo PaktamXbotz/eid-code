@@ -432,7 +432,7 @@ body {
 #ui .love:nth-child(64) .love_horizontal {
   animation-delay: -19200ms;
 }
-#ui .love_vertical {
+#ui .love:nth-child(64) .love_vertical {
   animation-delay: -19200ms;
 }
 #ui .love:nth-child(65) .love_horizontal {
@@ -535,4 +535,193 @@ body {
   animation-delay: -24300ms;
 }
 #ui .love:nth-child(81) .love_vertical {
-  animation-delay: -
+  animation-delay: -24300ms;
+}
+#ui .love:nth-child(82) .love_horizontal {
+  animation-delay: -24600ms;
+}
+#ui .love:nth-child(82) .love_vertical {
+  animation-delay: -24600ms;
+}
+#ui .love:nth-child(83) .love_horizontal {
+  animation-delay: -24900ms;
+}
+#ui .love:nth-child(83) .love_vertical {
+  animation-delay: -24900ms;
+}
+#ui .love:nth-child(84) .love_horizontal {
+  animation-delay: -25200ms;
+}
+#ui .love:nth-child(84) .love_vertical {
+  animation-delay: -25200ms;
+}
+#ui .love:nth-child(85) .love_horizontal {
+  animation-delay: -25500ms;
+}
+#ui .love:nth-child(85) .love_vertical {
+  animation-delay: -25500ms;
+}
+#ui .love:nth-child(86) .love_horizontal {
+  animation-delay: -25800ms;
+}
+#ui .love:nth-child(86) .love_vertical {
+  animation-delay: -25800ms;
+}
+#ui .love:nth-child(87) .love_horizontal {
+  animation-delay: -26100ms;
+}
+#ui .love:nth-child(87) .love_vertical {
+  animation-delay: -26100ms;
+}
+#ui .love:nth-child(88) .love_horizontal {
+  animation-delay: -26400ms;
+}
+#ui .love:nth-child(88) .love_vertical {
+  animation-delay: -26400ms;
+}
+#ui .love:nth-child(89) .love_horizontal {
+  animation-delay: -26700ms;
+}
+#ui .love:nth-child(89) .love_vertical {
+  animation-delay: -26700ms;
+}
+#ui .love:nth-child(90) .love_horizontal {
+  animation-delay: -27000ms;
+}
+#ui .love:nth-child(90) .love_vertical {
+  animation-delay: -27000ms;
+}
+#ui .love:nth-child(91) .love_horizontal {
+  animation-delay: -27300ms;
+}
+#ui .love:nth-child(91) .love_vertical {
+  animation-delay: -27300ms;
+}
+#ui .love:nth-child(92) .love_horizontal {
+  animation-delay: -27600ms;
+}
+#ui .love:nth-child(92) .love_vertical {
+  animation-delay: -27600ms;
+}
+#ui .love:nth-child(93) .love_horizontal {
+  animation-delay: -27900ms;
+}
+#ui .love:nth-child(93) .love_vertical {
+  animation-delay: -27900ms;
+}
+#ui .love:nth-child(94) .love_horizontal {
+  animation-delay: -28200ms;
+}
+#ui .love:nth-child(94) .love_vertical {
+  animation-delay: -28200ms;
+}
+#ui .love:nth-child(95) .love_horizontal {
+  animation-delay: -28500ms;
+}
+#ui .love:nth-child(95) .love_vertical {
+  animation-delay: -28500ms;
+}
+#ui .love:nth-child(96) .love_horizontal {
+  animation-delay: -28800ms;
+}
+#ui .love:nth-child(96) .love_vertical {
+  animation-delay: -28800ms;
+}
+#ui .love:nth-child(97) .love_horizontal {
+  animation-delay: -29100ms;
+}
+#ui .love:nth-child(97) .love_vertical {
+  animation-delay: -29100ms;
+}
+#ui .love:nth-child(98) .love_horizontal {
+  animation-delay: -29400ms;
+}
+#ui .love:nth-child(98) .love_vertical {
+  animation-delay: -29400ms;
+}
+#ui .love:nth-child(99) .love_horizontal {
+  animation-delay: -29700ms;
+}
+#ui .love:nth-child(99) .love_vertical {
+  animation-delay: -29700ms;
+}
+#ui .love:nth-child(100) .love_horizontal {
+  animation-delay: -30000ms;
+}
+#ui .love:nth-child(100) .love_vertical {
+  animation-delay: -30000ms;
+}
+
+@keyframes horizontal {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(450px);
+  }
+}
+@keyframes vertical {
+  0% {
+    transform: translateY(180px);
+  }
+  10% {
+    transform: translateY(45px);
+  }
+  15% {
+    transform: translateY(4.5px);
+  }
+  18% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(4.5px);
+  }
+  22% {
+    transform: translateY(34.61538px);
+  }
+  24% {
+    transform: translateY(64.28571px);
+  }
+  25% {
+    transform: translateY(112.5px);
+  }
+  26% {
+    transform: translateY(64.28571px);
+  }
+  28% {
+    transform: translateY(34.61538px);
+  }
+  30% {
+    transform: translateY(4.5px);
+  }
+  32% {
+    transform: translateY(0px);
+  }
+  35% {
+    transform: translateY(4.5px);
+  }
+  40% {
+    transform: translateY(45px);
+  }
+  50% {
+    transform: translateY(180px);
+  }
+  71% {
+    transform: translateY(428.57143px);
+  }
+  72.5% {
+    transform: translateY(441.17647px);
+  }
+  75% {
+    transform: translateY(450px);
+  }
+  77.5% {
+    transform: translateY(441.17647px);
+  }
+  79% {
+    transform: translateY(428.57143px);
+  }
+  100% {
+    transform: translateY(180px);
+  }
+}
