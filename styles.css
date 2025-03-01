@@ -72,6 +72,7 @@ body {
 #ui .love_vertical {
   animation: vertical 20000ms infinite linear;
 }
+
 @keyframes horizontal {
   from {
     transform: translateX(0px);
@@ -80,6 +81,7 @@ body {
     transform: translateX(450px);
   }
 }
+
 @keyframes vertical {
   0% {
     transform: translateY(180px);
