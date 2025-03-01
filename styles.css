@@ -1,23 +1,42 @@
 body {
-    background-color: #f0f0f0; /* Light background for simplicity */
-    color: #333; /* Default text color */
-    font-family: Arial, sans-serif; /* Simple font */
-    margin: 0; /* Remove default margin */
-    padding: 20px; /* Add some padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-.container {
-    max-width: 600px; /* Limit the width of the container */
-    margin: auto; /* Center the container */
-    text-align: center; /* Center text */
+.love-shape {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
 }
 
-.lyrics {
-    background-color: #fff; /* White background for lyrics */
-    border: 1px solid #ccc; /* Light gray border */
-    padding: 10px; /* Add padding */
-    height: 300px; /* Fixed height for lyrics */
-    overflow-y: auto; /* Scroll if content overflows */
-    white-space: pre-wrap; /* Preserve whitespace for typing effect */
-    margin-top: 20px; /* Space above lyrics */
+.love-shape span {
+    display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6b6b;
+    background-color: #fff;
+    border: 2px solid #ff6b6b;
+    margin: 2px;
+    transform-style: preserve-3d;
+    animation: rotate 5s infinite linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
 }
