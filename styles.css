@@ -8,59 +8,37 @@ body {
     font-family: 'Dosis', sans-serif;
 }
 
-.love-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 1000px;
-}
-
-.love-shape {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    transform-style: preserve-3d;
-    animation: rotate 20s infinite linear;
-}
-
-.love-shape span {
+#ui .love {
     position: absolute;
-    display: block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#ui .love .love_horizontal {
+    animation: horizontal 10s infinite alternate ease-in-out;
+}
+
+#ui .love .love_vertical {
+    animation: vertical 20s infinite linear;
+}
+
+#ui .love .love_word {
     color: #ff6b6b;
-    background-color: #fff;
-    border: 1px solid #ff6b6b;
-    transform-style: preserve-3d;
-    transition: transform 0.5s, color 0.5s, background-color 0.5s;
+    font-size: 1.4rem;
+    transform: translateY(-100%) rotateZ(-30deg);
+    text-shadow: 0 0 10px #fff;
+    letter-spacing: 2px;
 }
 
-.love-shape span:hover {
-    background-color: #ff6b6b;
-    color: #fff;
-    transform: scale(1.2);
+@keyframes horizontal {
+    from { transform: translateX(0px); }
+    to { transform: translateX(450px); }
 }
 
-.love-shape span:nth-child(1) { transform: rotate(0deg) translateZ(150px); }
-.love-shape span:nth-child(2) { transform: rotate(36deg) translateZ(150px); }
-.love-shape span:nth-child(3) { transform: rotate(72deg) translateZ(150px); }
-.love-shape span:nth-child(4) { transform: rotate(108deg) translateZ(150px); }
-.love-shape span:nth-child(5) { transform: rotate(144deg) translateZ(150px); }
-.love-shape span:nth-child(6) { transform: rotate(180deg) translateZ(150px); }
-.love-shape span:nth-child(7) { transform: rotate(216deg) translateZ(150px); }
-.love-shape span:nth-child(8) { transform: rotate(252deg) translateZ(150px); }
-.love-shape span:nth-child(9) { transform: rotate(288deg) translateZ(150px); }
-.love-shape span:nth-child(10) { transform: rotate(324deg) translateZ(150px); }
-
-@keyframes rotate {
-    from {
-        transform: rotateY(0deg);
-    }
-    to {
-        transform: rotateY(360deg);
-    }
+@keyframes vertical {
+    0% { transform: translateY(180px); }
+    71% { transform: translateY(428.57143px); }
+    72.5% { transform: translateY(441.17647px); }
+    100% { transform: translateY(180px); }
 }
