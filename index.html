@@ -24,17 +24,6 @@
         </div>
     </div>
     <audio id="musicPlayer" src="assets/music.mp3"></audio>
-    <script>
-        window.onload = function() {
-            alert('Click OK to play music');
-            var musicPlayer = document.getElementById('musicPlayer');
-            console.log('Audio element:', musicPlayer);
-            musicPlayer.play().then(() => {
-                console.log('Playback started successfully.');
-            }).catch(error => {
-                console.error('Error during playback:', error);
-            });
-        };
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
