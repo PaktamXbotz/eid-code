@@ -23,13 +23,17 @@
             <div class="circle_word">I Miss You</div>
         </div>
     </div>
-    <audio id="musicPlayer" src="assets/song.mp3"></audio>
-    <script src="script.js"></script>
+    <audio id="musicPlayer" src="assets/music.mp3"></audio>
     <script>
         window.onload = function() {
             alert('Click OK to play music');
             var musicPlayer = document.getElementById('musicPlayer');
-            musicPlayer.play();
+            console.log('Audio element:', musicPlayer);
+            musicPlayer.play().then(() => {
+                console.log('Playback started successfully.');
+            }).catch(error => {
+                console.error('Error during playback:', error);
+            });
         };
     </script>
 </body>
