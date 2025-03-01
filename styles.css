@@ -110,6 +110,74 @@ body {
   animation-delay: -2700ms;
 }
 
+/* Add animation delays for the additional tulip blocks */
+#ui .tulip:nth-child(10) .tulip_horizontal {
+  animation-delay: -3000ms;
+}
+#ui .tulip:nth-child(10) .tulip_vertical {
+  animation-delay: -3000ms;
+}
+#ui .tulip:nth-child(11) .tulip_horizontal {
+  animation-delay: -3300ms;
+}
+#ui .tulip:nth-child(11) .tulip_vertical {
+  animation-delay: -3300ms;
+}
+#ui .tulip:nth-child(12) .tulip_horizontal {
+  animation-delay: -3600ms;
+}
+#ui .tulip:nth-child(12) .tulip_vertical {
+  animation-delay: -3600ms;
+}
+#ui .tulip:nth-child(13) .tulip_horizontal {
+  animation-delay: -3900ms;
+}
+#ui .tulip:nth-child(13) .tulip_vertical {
+  animation-delay: -3900ms;
+}
+#ui .tulip:nth-child(14) .tulip_horizontal {
+  animation-delay: -4200ms;
+}
+#ui .tulip:nth-child(14) .tulip_vertical {
+  animation-delay: -4200ms;
+}
+#ui .tulip:nth-child(15) .tulip_horizontal {
+  animation-delay: -4500ms;
+}
+#ui .tulip:nth-child(15) .tulip_vertical {
+  animation-delay: -4500ms;
+}
+#ui .tulip:nth-child(16) .tulip_horizontal {
+  animation-delay: -4800ms;
+}
+#ui .tulip:nth-child(16) .tulip_vertical {
+  animation-delay: -4800ms;
+}
+#ui .tulip:nth-child(17) .tulip_horizontal {
+  animation-delay: -5100ms;
+}
+#ui .tulip:nth-child(17) .tulip_vertical {
+  animation-delay: -5100ms;
+}
+#ui .tulip:nth-child(18) .tulip_horizontal {
+  animation-delay: -5400ms;
+}
+#ui .tulip:nth-child(18) .tulip_vertical {
+  animation-delay: -5400ms;
+}
+#ui .tulip:nth-child(19) .tulip_horizontal {
+  animation-delay: -5700ms;
+}
+#ui .tulip:nth-child(19) .tulip_vertical {
+  animation-delay: -5700ms;
+}
+#ui .tulip:nth-child(20) .tulip_horizontal {
+  animation-delay: -6000ms;
+}
+#ui .tulip:nth-child(20) .tulip_vertical {
+  animation-delay: -6000ms;
+}
+
 @keyframes horizontal {
   from {
     transform: translateX(0px);
