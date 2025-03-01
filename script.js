@@ -47,13 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Audio playback integration
     window.onload = function() {
-        alert('Click OK to play music');
-        var musicPlayer = document.getElementById('musicPlayer');
-        console.log('Audio element:', musicPlayer);
-        musicPlayer.play().then(() => {
-            console.log('Playback started successfully.');
-        }).catch(error => {
-            console.error('Error during playback:', error);
-        });
+        if (confirm('Click OK to play music')) {
+            var musicPlayer = document.getElementById('musicPlayer');
+            console.log('Audio element:', musicPlayer);
+            musicPlayer.play().then(() => {
+                console.log('Playback started successfully.');
+            }).catch(error => {
+                console.error('Error during playback:', error);
+            });
+        }
     };
 });
