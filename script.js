@@ -1,34 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
     const circle = document.querySelector('.circle');
-    let isMouseDown = false;
-    let startX, startY, initialRotateX, initialRotateY;
+    let isDragging = false;
+    let startX, startY, initialRotateX = 0, initialRotateY = 0;
+
+    const getRotationValues = (transform) => {
+        const values = transform.match(/matrix.*\((.+)\)/)[1].split(', ');
+        const a = values[0], b = values[1], c = values[2], d = values[3];
+        const scale = Math.sqrt(a * a + b * b);
+        const sin = b / scale;
+        const angle = Math.round(Math.atan2(b, a) * (180 / Math.PI));
+        return { rotateX: Math.asin(-sin) * (180 / Math.PI), rotateY: angle };
+    };
 
     const handleMouseDown = (e) => {
-        isMouseDown = true;
-        startX = e.clientX;
-        startY = e.clientY;
-        initialRotateX = parseFloat(getComputedStyle(circle).transform.split(',')[5]) || 0;
-        initialRotateY = parseFloat(getComputedStyle(circle).transform.split(',')[4]) || 0;
+        isDragging = true;
+        startX = e.clientX || e.touches[0].clientX;
+        startY = e.clientY || e.touches[0].clientY;
+        const { rotateX, rotateY } = getRotationValues(getComputedStyle(circle).transform);
+        initialRotateX = rotateX;
+        initialRotateY = rotateY;
     };
 
     const handleMouseMove = (e) => {
-        if (!isMouseDown) return;
-        const dx = e.clientX - startX;
-        const dy = e.clientY - startY;
+        if (!isDragging) return;
+        const clientX = e.clientX || e.touches[0].clientX;
+        const clientY = e.clientY || e.touches[0].clientY;
+        const dx = clientX - startX;
+        const dy = clientY - startY;
         const rotateX = initialRotateX + dy * 0.1;
         const rotateY = initialRotateY + dx * 0.1;
         circle.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     };
 
     const handleMouseUp = () => {
-        isMouseDown = false;
+        isDragging = false;
     };
 
     circle.addEventListener('mousedown', handleMouseDown);
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseup', handleMouseUp);
+    circle.addEventListener('touchstart', handleMouseDown);
 
-    circle.addEventListener('touchstart', (e) => handleMouseDown(e.touches[0]));
-    document.addEventListener('touchmove', (e) => handleMouseMove(e.touches[0]));
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('touchmove', handleMouseMove);
+
+    document.addEventListener('mouseup', handleMouseUp);
     document.addEventListener('touchend', handleMouseUp);
 });
