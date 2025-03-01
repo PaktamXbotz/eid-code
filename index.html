@@ -23,6 +23,14 @@
             <div class="circle_word">I Miss You</div>
         </div>
     </div>
+    <audio id="musicPlayer" src="assets/music.mp3"></audio>
     <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            alert('Click OK to play music');
+            var musicPlayer = document.getElementById('musicPlayer');
+            musicPlayer.play();
+        };
+    </script>
 </body>
 </html>
