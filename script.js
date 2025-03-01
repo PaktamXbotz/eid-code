@@ -1,27 +1,21 @@
-document.getElementById('search-btn').addEventListener('click', function() {
-    const city = document.getElementById('city-input').value;
-    if (city) {
-        fetchWeatherData(city);
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    const spans = document.querySelectorAll('.love-shape span');
+    
+    spans.forEach((span, index) => {
+        span.style.animationDelay = `${index * 0.1}s`;
+    });
+
+    document.querySelector('.love-shape').addEventListener('mouseover', () => {
+        spans.forEach(span => {
+            span.style.transform = `scale(1.2)`;
+            span.style.transition = 'transform 0.5s';
+        });
+    });
+
+    document.querySelector('.love-shape').addEventListener('mouseout', () => {
+        spans.forEach(span => {
+            span.style.transform = `scale(1)`;
+            span.style.transition = 'transform 0.5s';
+        });
+    });
 });
-
-function fetchWeatherData(city) {
-    const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => displayWeatherData(data))
-        .catch(error => console.error('Error fetching weather data:', error));
-}
-
-function displayWeatherData(data) {
-    if (data.cod === 200) {
-        document.getElementById('city-name').textContent = data.name;
-        document.getElementById('temperature').textContent = `Temperature: ${data.main.temp}°C`;
-        document.getElementById('weather-description').textContent = data.weather[0].description;
-        document.querySelector('.weather-info').style.display = 'block';
-    } else {
-        alert('City not found. Please try again.');
-    }
-}
