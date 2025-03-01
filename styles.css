@@ -1,253 +1,42 @@
-#btn-make {
-  bottom: 200px;
-  right: 30px;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-.div_btn {
-  position: fixed;
-  cursor: pointer;
-  width: 55px;
-  height: 55px;
-  border: 3px solid #fff;
-  border-radius: 50%;
-  font-size: 2em;
-  line-height: 58px;
-  text-align: center;
-  z-index: 999;
-}
-#div_support {
-  bottom: 80px;
-  right: 20px;
-  background-color: rgba(0, 0, 0, 0.3);
-}
 body {
   background: #000;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
-#ui .tulip {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -225px 0 0 -225px;
-  background: #ea80b0; /* Pink color for the tulip */
-  width: 100px;
+#ui {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.tulip-shape {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
   height: 200px;
-  clip-path: polygon(50% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  transform: scale(2);
 }
-#ui .tulip:last-child .tulip_word {
-  color: #fff;
+
+.tulip-shape span {
   font-size: 2rem;
-  text-shadow: 0 0 10px #ea80b0;
-}
-#ui .tulip_word {
   color: #ea80b0;
-  font-size: 1.4rem;
-  transform: translateY(-100%) rotateZ(-30deg);
-  font-family: "Dosis", sans-serif;
   text-shadow: 0 0 10px #fff;
-  letter-spacing: 2px;
-}
-#ui .tulip_horizontal {
-  animation: horizontal 10000ms infinite alternate ease-in-out;
-}
-#ui .tulip_vertical {
-  animation: vertical 20000ms infinite linear;
-}
-#ui .tulip:nth-child(1) .tulip_horizontal {
-  animation-delay: -300ms;
-}
-#ui .tulip:nth-child(1) .tulip_vertical {
-  animation-delay: -300ms;
-}
-#ui .tulip:nth-child(2) .tulip_horizontal {
-  animation-delay: -600ms;
-}
-#ui .tulip:nth-child(2) .tulip_vertical {
-  animation-delay: -600ms;
-}
-#ui .tulip:nth-child(3) .tulip_horizontal {
-  animation-delay: -900ms;
-}
-#ui .tulip:nth-child(3) .tulip_vertical {
-  animation-delay: -900ms;
-}
-#ui .tulip:nth-child(4) .tulip_horizontal {
-  animation-delay: -1200ms;
-}
-#ui .tulip:nth-child(4) .tulip_vertical {
-  animation-delay: -1200ms;
-}
-#ui .tulip:nth-child(5) .tulip_horizontal {
-  animation-delay: -1500ms;
-}
-#ui .tulip:nth-child(5) .tulip_vertical {
-  animation-delay: -1500ms;
-}
-#ui .tulip:nth-child(6) .tulip_horizontal {
-  animation-delay: -1800ms;
-}
-#ui .tulip:nth-child(6) .tulip_vertical {
-  animation-delay: -1800ms;
-}
-#ui .tulip:nth-child(7) .tulip_horizontal {
-  animation-delay: -2100ms;
-}
-#ui .tulip:nth-child(7) .tulip_vertical {
-  animation-delay: -2100ms;
-}
-#ui .tulip:nth-child(8) .tulip_horizontal {
-  animation-delay: -2400ms;
-}
-#ui .tulip:nth-child(8) .tulip_vertical {
-  animation-delay: -2400ms;
-}
-#ui .tulip:nth-child(9) .tulip_horizontal {
-  animation-delay: -2700ms;
-}
-#ui .tulip:nth-child(9) .tulip_vertical {
-  animation-delay: -2700ms;
+  animation: float 5s infinite ease-in-out;
 }
 
-/* Add animation delays for the additional tulip blocks */
-#ui .tulip:nth-child(10) .tulip_horizontal {
-  animation-delay: -3000ms;
-}
-#ui .tulip:nth-child(10) .tulip_vertical {
-  animation-delay: -3000ms;
-}
-#ui .tulip:nth-child(11) .tulip_horizontal {
-  animation-delay: -3300ms;
-}
-#ui .tulip:nth-child(11) .tulip_vertical {
-  animation-delay: -3300ms;
-}
-#ui .tulip:nth-child(12) .tulip_horizontal {
-  animation-delay: -3600ms;
-}
-#ui .tulip:nth-child(12) .tulip_vertical {
-  animation-delay: -3600ms;
-}
-#ui .tulip:nth-child(13) .tulip_horizontal {
-  animation-delay: -3900ms;
-}
-#ui .tulip:nth-child(13) .tulip_vertical {
-  animation-delay: -3900ms;
-}
-#ui .tulip:nth-child(14) .tulip_horizontal {
-  animation-delay: -4200ms;
-}
-#ui .tulip:nth-child(14) .tulip_vertical {
-  animation-delay: -4200ms;
-}
-#ui .tulip:nth-child(15) .tulip_horizontal {
-  animation-delay: -4500ms;
-}
-#ui .tulip:nth-child(15) .tulip_vertical {
-  animation-delay: -4500ms;
-}
-#ui .tulip:nth-child(16) .tulip_horizontal {
-  animation-delay: -4800ms;
-}
-#ui .tulip:nth-child(16) .tulip_vertical {
-  animation-delay: -4800ms;
-}
-#ui .tulip:nth-child(17) .tulip_horizontal {
-  animation-delay: -5100ms;
-}
-#ui .tulip:nth-child(17) .tulip_vertical {
-  animation-delay: -5100ms;
-}
-#ui .tulip:nth-child(18) .tulip_horizontal {
-  animation-delay: -5400ms;
-}
-#ui .tulip:nth-child(18) .tulip_vertical {
-  animation-delay: -5400ms;
-}
-#ui .tulip:nth-child(19) .tulip_horizontal {
-  animation-delay: -5700ms;
-}
-#ui .tulip:nth-child(19) .tulip_vertical {
-  animation-delay: -5700ms;
-}
-#ui .tulip:nth-child(20) .tulip_horizontal {
-  animation-delay: -6000ms;
-}
-#ui .tulip:nth-child(20) .tulip_vertical {
-  animation-delay: -6000ms;
-}
-
-@keyframes horizontal {
-  from {
-    transform: translateX(0px);
-  }
-  to {
-    transform: translateX(450px);
-  }
-}
-@keyframes vertical {
-  0% {
-    transform: translateY(180px);
-  }
-  10% {
-    transform: translateY(45px);
-  }
-  15% {
-    transform: translateY(4.5px);
-  }
-  18% {
-    transform: translateY(0px);
-  }
-  20% {
-    transform: translateY(4.5px);
-  }
-  22% {
-    transform: translateY(34.61538px);
-  }
-  24% {
-    transform: translateY(64.28571px);
-  }
-  25% {
-    transform: translateY(112.5px);
-  }
-  26% {
-    transform: translateY(64.28571px);
-  }
-  28% {
-    transform: translateY(34.61538px);
-  }
-  30% {
-    transform: translateY(4.5px);
-  }
-  32% {
-    transform: translateY(0px);
-  }
-  35% {
-    transform: translateY(4.5px);
-  }
-  40% {
-    transform: translateY(45px);
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(180px);
-  }
-  71% {
-    transform: translateY(428.57143px);
-  }
-  72.5% {
-    transform: translateY(441.17647px);
-  }
-  75% {
-    transform: translateY(450px);
-  }
-  77.5% {
-    transform: translateY(441.17647px);
-  }
-  79% {
-    transform: translateY(428.57143px);
-  }
-  100% {
-    transform: translateY(180px);
+    transform: translateY(-10px);
   }
 }
