@@ -44,4 +44,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('mouseup', handlePointerUp);
     document.addEventListener('touchend', handlePointerUp);
+
+    // Audio playback integration
+    window.onload = function() {
+        alert('Click OK to play music');
+        var musicPlayer = document.getElementById('musicPlayer');
+        console.log('Audio element:', musicPlayer);
+        musicPlayer.play().then(() => {
+            console.log('Playback started successfully.');
+        }).catch(error => {
+            console.error('Error during playback:', error);
+        });
+    };
 });
