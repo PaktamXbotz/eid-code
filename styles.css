@@ -11,27 +11,24 @@ body {
     position: relative;
     width: 800px;
     height: 800px;
+    overflow: hidden;
 }
 
 .ramadhan-text {
     font-family: 'Arial', sans-serif; /* Replace with a stylized sans-serif font if available */
-    font-size: 60px; /* Adjust size as needed */
+    font-size: 60px; /* Size of the text */
     fill: lightgoldenrodyellow; /* Light gold color */
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 8px;
     text-shadow: 0 0 15px lightpink, 0 0 30px lightpink;
-    transform: translate(-50%, -50%) rotate(-30deg);
-    animation: swirl 5s infinite linear;
+    animation: move 15s linear infinite; /* Animate the text for endless effect */
 }
 
-@keyframes swirl {
+@keyframes move {
     0% {
-        transform: translate(-50%, -50%) rotate(-30deg);
-    }
-    50% {
-        transform: translate(-50%, -50%) rotate(30deg);
+        transform: translate(0, 0);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(-30deg);
+        transform: translate(-300px, 0); /* Move left for the endless effect */
     }
 }
