@@ -16,19 +16,19 @@ body {
 
 .ramadhan-text {
     font-family: 'Arial', sans-serif; /* Replace with a stylized sans-serif font if available */
-    font-size: 60px; /* Size of the text */
+    font-size: 50px; /* Size of the text */
     fill: lightgoldenrodyellow; /* Light gold color */
     text-transform: uppercase;
     letter-spacing: 8px;
-    text-shadow: 0 0 15px lightpink, 0 0 30px lightpink;
-    animation: move 15s linear infinite; /* Animate the text for endless effect */
+    white-space: nowrap; /* Prevent text from wrapping */
+    animation: scroll 15s linear infinite; /* Animate the text for endless effect */
 }
 
-@keyframes move {
+@keyframes scroll {
     0% {
-        transform: translate(0, 0);
+        transform: translateX(100%); /* Start from the right side */
     }
     100% {
-        transform: translate(-300px, 0); /* Move left for the endless effect */
+        transform: translateX(-100%); /* Move to the left side */
     }
 }
