@@ -20,8 +20,8 @@ body {
 
 .moon {
   position: relative;
-  width: 200px;
-  height: 400px;
+  width: 400px;
+  height: 800px;
   background: radial-gradient(circle at 30% 30%, gold, white);
   border-radius: 50% 50% 0 0;
   transform: rotate(-45deg);
@@ -30,13 +30,26 @@ body {
 
 .text {
   color: gold;
-  font-size: 1.5rem;
+  font-size: 2rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(0deg);
-  animation: circulate 10s infinite linear;
+  animation: circulate 5s infinite linear;
 }
+
+.text:nth-child(1)  { animation-delay: 0s; }
+.text:nth-child(2)  { animation-delay: 0.5s; }
+.text:nth-child(3)  { animation-delay: 1s; }
+.text:nth-child(4)  { animation-delay: 1.5s; }
+.text:nth-child(5)  { animation-delay: 2s; }
+.text:nth-child(6)  { animation-delay: 2.5s; }
+.text:nth-child(7)  { animation-delay: 3s; }
+.text:nth-child(8)  { animation-delay: 3.5s; }
+.text:nth-child(9)  { animation-delay: 4s; }
+.text:nth-child(10) { animation-delay: 4.5s; }
+.text:nth-child(11) { animation-delay: 5s; }
+.text:nth-child(12) { animation-delay: 5.5s; }
 
 @keyframes circulate {
   0% {
