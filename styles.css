@@ -1,34 +1,52 @@
 body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: black;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
 }
 
-.crescent-moon {
-    position: relative;
-    width: 800px;
-    height: 800px;
-    overflow: hidden;
+.container {
+  position: relative;
+  width: 300px;
+  height: 300px;
 }
 
-.ramadhan-text {
-    font-family: 'Arial', sans-serif; /* Replace with a stylized sans-serif font if available */
-    font-size: 50px; /* Size of the text */
-    fill: lightgoldenrodyellow; /* Light gold color */
-    text-transform: uppercase;
-    letter-spacing: 8px;
-    white-space: nowrap; /* Prevent text from wrapping */
-    animation: scroll 15s linear infinite; /* Animate the text for endless effect */
+.moon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(100%); /* Start from the right side */
-    }
-    100% {
-        transform: translateX(-100%); /* Move to the left side */
-    }
+.text-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  mask: url(#moon-mask); /* Clip text to the moon shape */
+}
+
+.text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFD700; /* Neon gold color */
+  white-space: nowrap;
+  animation: scroll-text 20s linear infinite; /* Slower animation for smoother effect */
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
