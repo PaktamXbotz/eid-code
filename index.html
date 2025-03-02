@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crescent Moon Design</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramadhan Crescent Moon</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="crescent-moon">
-        <svg width="800" height="800" viewBox="0 0 800 800">
-            <defs>
-                <filter id="neonGlow">
-                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
-                    <feFlood flood-color="lightpink" result="flood"/>
-                    <feComposite in2="blur" operator="in"/>
-                    <feMerge>
-                        <feMergeNode/>
-                        <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                </filter>
-                <clipPath id="crescentClip">
-                    <path d="M400,400 C500,200 600,300 600,500 C600,700 400,700 400,500 C200,500 300,300 400,400 Z" />
-                </clipPath>
-            </defs>
-            <rect width="800" height="800" fill="black" />
-            <g clip-path="url(#crescentClip)">
-                <text class="ramadhan-text" filter="url(#neonGlow)">
-                    Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan
-                </text>
-            </g>
-        </svg>
+  <div class="container">
+    <!-- SVG for Crescent Moon -->
+    <svg class="moon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <mask id="moon-mask">
+          <path d="M100,20 a80,80 0 1,0 0,160 a80,80 0 0,1 0,-160" fill="white" />
+        </mask>
+      </defs>
+      <path d="M100,20 a80,80 0 1,0 0,160 a80,80 0 0,1 0,-160" fill="#FFD700" />
+    </svg>
+
+    <!-- Text to Fill the Moon -->
+    <div class="text-container">
+      <div class="text">
+        Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan
+        Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan
+        Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan
+      </div>
     </div>
+  </div>
 </body>
 </html>
