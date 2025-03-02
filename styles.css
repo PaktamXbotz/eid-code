@@ -32,6 +32,7 @@ body {
   height: 100%;
   overflow: hidden;
   mask: url(#moon-mask); /* Clip text to the moon shape */
+  -webkit-mask: url(#moon-mask); /* For Safari support */
 }
 
 .text {
