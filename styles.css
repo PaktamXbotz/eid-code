@@ -22,62 +22,21 @@ body {
   position: absolute;
   width: 400px;
   height: 400px;
-  border-radius: 50%;
-  background: conic-gradient(from 180deg at 50% 50%, gold, white);
-  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 40% 50%);
-  transform: rotate(45deg);
-}
-
-.moon_horizontal {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: circulate-horizontal 10s infinite linear;
-}
-
-.moon_vertical {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: circulate-vertical 10s infinite linear;
+  clip-path: circle(50%);
 }
 
 .moon_word {
   color: gold;
   font-size: 1.5rem;
   position: absolute;
-  animation: circulate-word 10s infinite linear;
+  animation: circulate 10s infinite linear;
 }
 
-@keyframes circulate-horizontal {
+@keyframes circulate {
   0% {
-    transform: rotateY(0deg);
+    transform: rotate(0deg) translateX(200px) rotate(0deg);
   }
   100% {
-    transform: rotateY(360deg);
-  }
-}
-
-@keyframes circulate-vertical {
-  0% {
-    transform: rotateX(0deg);
-  }
-  100% {
-    transform: rotateX(360deg);
-  }
-}
-
-@keyframes circulate-word {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg);
+    transform: rotate(360deg) translateX(200px) rotate(-360deg);
   }
 }
