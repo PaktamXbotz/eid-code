@@ -19,10 +19,21 @@
                         <feMergeNode in="SourceGraphic"/>
                     </feMerge>
                 </filter>
+                <clipPath id="crescentClip">
+                    <path d="M400,400 C500,300 600,350 600,450 C600,550 500,600 400,500 C300,400 350,300 400,400 Z" />
+                </clipPath>
             </defs>
-            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="ramadhan-text" filter="url(#neonGlow)">
-                Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan
+            <!-- Background Circle for effect -->
+            <rect width="800" height="800" fill="black" />
+            <!-- Text that fills the crescent moon shape -->
+            <text class="ramadhan-text" filter="url(#neonGlow)">
+                Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan
             </text>
+            <g clip-path="url(#crescentClip)">
+                <text class="ramadhan-text" filter="url(#neonGlow)">
+                    Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan
+                </text>
+            </g>
         </svg>
     </div>
 </body>
