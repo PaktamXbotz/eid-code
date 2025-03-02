@@ -1,130 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramadhan</title>
+    <title>Crescent Moon Design</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="ui">
-        <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-        <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-        <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-        <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-        <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-        <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-        <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-        <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-        <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-        <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-         <div class="crescent">
-            <div class="crescent_word">Ramadhan</div>
-        </div>
-        <!-- Tambahkan lebih banyak elemen "crescent" jika diperlukan -->
+    <div class="crescent-moon">
+        <svg width="800" height="800" viewBox="0 0 800 800">
+            <defs>
+                <filter id="neonGlow">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+                    <feFlood flood-color="lightpink" result="flood"/>
+                    <feComposite in2="blur" operator="in"/>
+                    <feMerge>
+                        <feMergeNode/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="ramadhan-text" filter="url(#neonGlow)">
+                Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan Ramadhan
+            </text>
+        </svg>
     </div>
-    <audio id="musicPlayer">
-        <source src="https://l.top4top.io/m_3347k597l1.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <script src="script.js"></script>
 </body>
 </html>
