@@ -22,21 +22,92 @@ body {
   position: absolute;
   width: 400px;
   height: 400px;
-  clip-path: circle(50%);
+  border-radius: 50%;
+  background: conic-gradient(from 180deg at 50% 50%, gold 0%, gold 25%, transparent 25%, transparent 100%);
 }
 
 .moon_word {
   color: gold;
   font-size: 1.5rem;
   position: absolute;
-  animation: circulate 10s infinite linear;
+  animation: vertical 20000ms infinite linear;
 }
 
-@keyframes circulate {
+#ui .moon_horizontal {
+  animation: horizontal 10000ms infinite alternate ease-in-out;
+}
+
+@keyframes horizontal {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(450px);
+  }
+}
+
+@keyframes vertical {
   0% {
-    transform: rotate(0deg) translateX(200px) rotate(0deg);
+    transform: translateY(180px);
+  }
+  10% {
+    transform: translateY(45px);
+  }
+  15% {
+    transform: translateY(4.5px);
+  }
+  18% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(4.5px);
+  }
+  22% {
+    transform: translateY(34.61538px);
+  }
+  24% {
+    transform: translateY(64.28571px);
+  }
+  25% {
+    transform: translateY(112.5px);
+  }
+  26% {
+    transform: translateY(64.28571px);
+  }
+  28% {
+    transform: translateY(34.61538px);
+  }
+  30% {
+    transform: translateY(4.5px);
+  }
+  32% {
+    transform: translateY(0px);
+  }
+  35% {
+    transform: translateY(4.5px);
+  }
+  40% {
+    transform: translateY(45px);
+  }
+  50% {
+    transform: translateY(180px);
+  }
+  71% {
+    transform: translateY(428.57143px);
+  }
+  72.5% {
+    transform: translateY(441.17647px);
+  }
+  75% {
+    transform: translateY(450px);
+  }
+  77.5% {
+    transform: translateY(441.17647px);
+  }
+  79% {
+    transform: translateY(428.57143px);
   }
   100% {
-    transform: rotate(360deg) translateX(200px) rotate(-360deg);
+    transform: translateY(180px);
   }
 }
