@@ -13,7 +13,6 @@ body {
     width: 400px;
     height: 400px;
     transform-style: preserve-3d;
-    animation: rotate 10s infinite linear;
 }
 .text {
     position: absolute;
@@ -22,8 +21,13 @@ body {
     font-family: Arial, sans-serif;
     font-weight: bold;
     text-shadow: 0 0 8px #ff66b2;
+    animation: moveText 10s infinite linear, rotateText 10s infinite linear;
 }
-@keyframes rotate {
-    from { transform: rotateY(0deg); }
-    to { transform: rotateY(360deg); }
+@keyframes moveText {
+    from { transform: translate3d(0, -100vh, 0); }
+    to { transform: translate3d(0, 100vh, 0); }
+}
+@keyframes rotateText {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
 }
