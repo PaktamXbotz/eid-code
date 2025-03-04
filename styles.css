@@ -21,13 +21,10 @@ body {
     font-family: Arial, sans-serif;
     font-weight: bold;
     text-shadow: 0 0 8px #ff66b2;
-    animation: moveText 10s infinite linear, rotateText 10s infinite linear;
+    animation: moveText 5s infinite linear;
 }
 @keyframes moveText {
-    from { transform: translate3d(0, -100vh, 0); }
-    to { transform: translate3d(0, 100vh, 0); }
-}
-@keyframes rotateText {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(-360deg); }
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
 }
