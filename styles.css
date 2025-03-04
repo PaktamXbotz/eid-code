@@ -6,13 +6,11 @@ body {
     height: 100vh;
     overflow: hidden;
     margin: 0;
-    perspective: 1000px;
 }
 .scene {
     position: relative;
     width: 400px;
     height: 400px;
-    transform-style: preserve-3d;
 }
 .text {
     position: absolute;
