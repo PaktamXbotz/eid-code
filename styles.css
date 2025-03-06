@@ -6,23 +6,27 @@ body {
     height: 100vh;
     overflow: hidden;
     margin: 0;
+    perspective: 1000px;
 }
+
 .scene {
     position: relative;
     width: 400px;
     height: 400px;
+    transform-style: preserve-3d;
+    animation: rotate 20s infinite linear;
 }
+
 .text {
     position: absolute;
-    color: #ff66b2;
-    font-size: 14px;
+    color: #FFD700; /* Warna emas */
+    font-size: 16px;
     font-family: Arial, sans-serif;
     font-weight: bold;
-    text-shadow: 0 0 8px #ff66b2;
-    animation: moveText 5s infinite linear;
+    text-shadow: 0 0 8px #FFD700, 0 0 16px #FFA500; /* Efek neon */
 }
-@keyframes moveText {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
+
+@keyframes rotate {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
 }
