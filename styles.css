@@ -1,4 +1,4 @@
-/* Gaya Latar Belakang */
+/* Background Style */
 body {
     font-family: 'Arial', sans-serif;
     text-align: center;
@@ -26,18 +26,31 @@ p {
     font-size: 16px;
 }
 
-/* Gaya Sampul Duit Raya */
-.sampul-container {
+/* Arcade Machine Style */
+.arcade-machine {
+    width: 80%;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 5px solid #FFD700;
+    border-radius: 15px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.envelope-container {
     display: flex;
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
 }
 
-.sampul {
+.envelope {
     width: 120px;
     height: 200px;
-    background: url('assets/sampul.png') no-repeat center center;
+    background: url('assets/envelope.png') no-repeat center center;
     background-size: cover;
     border-radius: 10px;
     display: inline-block;
@@ -46,7 +59,7 @@ p {
     position: relative;
 }
 
-/* Animasi Sampul Dikocok */
+/* Shuffle Envelope Animation */
 .shake {
     animation: shake 0.5s ease-in-out;
 }
@@ -59,8 +72,8 @@ p {
     100% { transform: rotate(0deg); }
 }
 
-/* Duit Raya */
-.duit {
+/* Money Style */
+.money {
     position: absolute;
     bottom: -30px;
     left: 50%;
@@ -73,7 +86,7 @@ p {
     transition: opacity 1s ease-in-out;
 }
 
-/* Gaya Butang */
+/* Button Style */
 button {
     padding: 10px 20px;
     margin-top: 20px;
