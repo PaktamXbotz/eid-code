@@ -50,7 +50,7 @@ p {
 .envelope {
     width: 120px;
     height: 200px;
-    background: url('assets/envelope.png') no-repeat center center;
+    background: url('assets/envelopes.png') no-repeat center center;
     background-size: cover;
     border-radius: 10px;
     display: inline-block;
