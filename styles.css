@@ -1,97 +1,45 @@
-/* Gaya Latar Belakang */
-body {
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    background: url('../assets/background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+// Alert pada permulaan
+window.onload = function() {
+    alert("Selamat Hari Raya! Kocok sampul dan pilih satu untuk melihat jumlah duit raya anda.");
+};
+
+let duitRaya = [10, 15, 20]; // Nilai duit dalam sampul
+
+// Fungsi untuk mengocok sampul
+function kocokSampul() {
+    duitRaya = duitRaya.sort(() => Math.random() - 0.5);
+    document.getElementById("result").innerText = "Sampul sudah dikocok! Pilih satu.";
+
+    // Tambah animasi kocok pada setiap sampul
+    document.querySelectorAll('.sampul').forEach(sampul => {
+        sampul.classList.add('shake');
+        setTimeout(() => {
+            sampul.classList.remove('shake');
+        }, 500);
+    });
+
+    // Sembunyikan semua jumlah duit sebelum memilih
+    document.querySelectorAll('.duit').forEach(duit => {
+        duit.style.opacity = 0;
+    });
 }
 
-.container {
-    margin-top: 50px;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-    display: inline-block;
-}
+// Fungsi untuk memilih sampul
+function pilihSampul(index) {
+    const amount = duitRaya[index];
+    document.getElementById("result").innerText = Anda mendapat RM${amount}!;
 
-h1 {
-    color: #FFD700;
-}
+    // Tunjukkan jumlah duit di atas sampul yang dipilih
+    let duitElement = document.getElementById(duit${index});
+    duitElement.innerText = RM ${amount};
+    duitElement.style.opacity = 1;
 
-p {
-    font-size: 16px;
-}
+    // Redirect ke WhatsApp biasa untuk redeem duit
+    const phoneNumber = "0104498264"; // Nombor WhatsApp penerima
+    const message = Saya telah memilih sampul duit raya dan mendapat RM${amount}! Bagaimana saya boleh tebusnya?;
+    const whatsappURL = https://api.whatsapp.com/send?phone=60${phoneNumber}&text=${encodeURIComponent(message)};
 
-/* Gaya Sampul Duit Raya */
-.sampul-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.sampul {
-    width: 120px;
-    height: 200px;
-    background: url('../assets/sampul.png') no-repeat center center;
-    background-size: cover;
-    border-radius: 10px;
-    display: inline-block;
-    transition: transform 0.5s ease-in-out;
-    cursor: pointer;
-    position: relative;
-}
-
-/* Animasi Sampul Dikocok */
-.shake {
-    animation: shake 0.5s ease-in-out;
-}
-
-@keyframes shake {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(5deg); }
-    50% { transform: rotate(-5deg); }
-    75% { transform: rotate(5deg); }
-    100% { transform: rotate(0deg); }
-}
-
-/* Duit Raya */
-.duit {
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 18px;
-    font-weight: bold;
-    color: #FFD700;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-/* Gaya Butang */
-button {
-    padding: 10px 20px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    background-color: #FFD700;
-    color: black;
-    font-weight: bold;
-}
-
-button:hover {
-    background-color: #ffcc00;
-}
-
-#result {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 20px;
+    setTimeout(() => {
+        window.location.href = whatsappURL;
+    }, 2500);
 }
