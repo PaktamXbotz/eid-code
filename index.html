@@ -1,13 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramadhan Crescent Animation</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Permainan Sampul Duit Raya</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="scene" id="moonContainer"></div>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+
+    <div class="container">
+        <h1>🎉 Pilih Sampul Duit Raya! 🎉</h1>
+        <p>Kocok sampul dan pilih satu untuk melihat jumlah duit raya anda.</p>
+
+        <div class="sampul-container">
+            <div class="sampul" onclick="pilihSampul(0)">
+                <div class="duit" id="duit0"></div>
+            </div>
+            <div class="sampul" onclick="pilihSampul(1)">
+                <div class="duit" id="duit1"></div>
+            </div>
+            <div class="sampul" onclick="pilihSampul(2)">
+                <div class="duit" id="duit2"></div>
+            </div>
+        </div>
+
+        <button onclick="kocokSampul()">🔄 Kocok Sampul</button>
+        <p id="result"></p>
+    </div>
 </body>
 </html>
