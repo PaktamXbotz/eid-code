@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Permainan Sampul Duit Raya</title>
+    <title>Envelope Money Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <script src="script.js"></script>
 
     <div class="container">
-        <h1>🎉 Pilih Sampul Duit Raya! 🎉</h1>
-        <p>Kocok sampul dan pilih satu untuk melihat jumlah duit raya anda.</p>
+        <h1>🎉 Choose an Envelope! 🎉</h1>
+        <p>Shuffle the envelopes and choose one to see your amount of money.</p>
 
-        <div class="sampul-container">
-            <div class="sampul" onclick="pilihSampul(0)">
-                <div class="duit" id="duit0"></div>
-            </div>
-            <div class="sampul" onclick="pilihSampul(1)">
-                <div class="duit" id="duit1"></div>
-            </div>
-            <div class="sampul" onclick="pilihSampul(2)">
-                <div class="duit" id="duit2"></div>
+        <div class="arcade-machine">
+            <div class="envelope-container">
+                <div class="envelope" onclick="chooseEnvelope(0)">
+                    <div class="money" id="money0"></div>
+                </div>
+                <div class="envelope" onclick="chooseEnvelope(1)">
+                    <div class="money" id="money1"></div>
+                </div>
+                <div class="envelope" onclick="chooseEnvelope(2)">
+                    <div class="money" id="money2"></div>
+                </div>
             </div>
         </div>
 
-        <button onclick="kocokSampul()">🔄 Kocok Sampul</button>
+        <button onclick="shuffleEnvelopes()">🔄 Shuffle Envelopes</button>
         <p id="result"></p>
     </div>
 </body>
