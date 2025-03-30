@@ -1,38 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="ms">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Envelope Money Game for Eid celebration">
-    <meta property="og:title" content="Envelope Money Game">
-    <meta property="og:description" content="Shuffle the envelopes and choose one to see your amount of money.">
-    <meta property="og:image" content="assets/background.jpg">
-    <title>Envelope Money Game</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Hari Raya</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://j.top4top.io/p_3376b2gx50.jpg') no-repeat center center/cover;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            width: 220px;
+            height: 170px;
+            cursor: pointer;
+            background: transparent;
+        }
+        .envelope {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            position: absolute;
+            bottom: 0;
+            border-radius: 10px;
+            transition: transform 0.5s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .moon {
+            font-size: 60px;
+            color: #FFD700;
+            position: absolute;
+            top: -60px;
+            transition: transform 0.7s ease-in-out;
+        }
+        .flap {
+            width: 100%;
+            height: 60px;
+            background: #FFA500;
+            position: absolute;
+            top: -30px;
+            clip-path: polygon(0 100%, 50% 0, 100% 100%);
+            transition: transform 0.5s ease-in-out;
+        }
+        .message {
+            width: 220px;
+            background: rgba(255, 255, 255, 0.9);
+            position: absolute;
+            top: -170px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100%);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.5s, transform 0.5s;
+            text-align: center;
+        }
+        .message p {
+            font-size: 18px;
+            color: #008000;
+            font-weight: bold;
+        }
+        .container.open .flap {
+            transform: rotateX(180deg);
+        }
+        .container.open .message {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+        .container.open .moon {
+            transform: translateY(100px) rotate(360deg);
+        }
+        .falling-stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .star {
+            position: absolute;
+            color: #FFD700;
+            font-size: 20px;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            from { transform: translateY(-100vh); opacity: 1; }
+            to { transform: translateY(100vh); opacity: 0; }
+        }
+    </style>
 </head>
 <body>
-    <script src="script.js"></script>
-
-    <div class="container">
-        <h1>🎉 Choose an Envelope! 🎉</h1>
-        <p>Shuffle the envelopes and choose one to see your amount of money.</p>
-
-        <div class="arcade-machine">
-            <div class="envelope-container">
-                <div class="envelope" onclick="chooseEnvelope(0)">
-                    <div class="money" id="money0"></div>
-                </div>
-                <div class="envelope" onclick="chooseEnvelope(1)">
-                    <div class="money" id="money1"></div>
-                </div>
-                <div class="envelope" onclick="chooseEnvelope(2)">
-                    <div class="money" id="money2"></div>
-                </div>
-            </div>
+    <div class="falling-stars"></div>
+    <div class="container" onclick="openEnvelope()">
+        <div class="flap"></div>
+        <div class="envelope">
+            <div class="moon">🌙</div>
         </div>
+        <div class="message">
+            <p>🌙 Selamat Hari Raya Aidilfitri! 🎉</p>
+            <p>Salam kemaafan, salam penuh kegembiraan! 🤗</p>
+            <p>Semoga Syawal membawa kebahagiaan! 💖✨</p>
+            <img src="https://l.top4top.io/p_337695fnq0.jpg" alt="QR Code" width="100">
+            <button class="claim-button" onclick="claimDuitRaya(event)">Claim Duit Raya</button>
+        </div>
+    </div><script>
+    function openEnvelope() {
+        document.querySelector('.container').classList.toggle('open');
+    }
+    function claimDuitRaya(event) {
+        event.stopPropagation();
+        window.location.href = 'https://cdn.tngdigital.com.my/s/oauth2/index.html#/moneypacket?p=2224999a3f62f5cac786b5be5056223c6ca84596fe32ce3f4da61983e99b68eb0b9216c4db3c9bf67663d5da1bcc871914fc309abcbbca65be5117cb2569ad9976c8682c0bcbe7848c7bad6638fcac8b';
+    }
+    function createFallingStars() {
+        const starContainer = document.querySelector('.falling-stars');
+        for (let i = 0; i < 20; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.innerHTML = Math.random() > 0.5 ? '✨' : '🌙';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            star.style.animationDelay = Math.random() * 2 + 's';
+            starContainer.appendChild(star);
+        }
+    }
+    createFallingStars();
+</script>
 
-        <button onclick="shuffleEnvelopes()">🔄 Shuffle Envelopes</button>
-        <p id="result"></p>
-    </div>
 </body>
 </html>
